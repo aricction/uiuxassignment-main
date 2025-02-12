@@ -1,0 +1,282 @@
+{
+  "Task_Data": [
+      {
+          "id": "general_information",
+          "title": "General Information",
+          "tasks": [
+            {
+                "id": "task-0",
+                "title": "Project Overview Documentation",
+                "assignee": {
+                    "names": ["Eve", "Grace",  "Alice" ]
+                },
+                "img": "",
+                "status": "",
+                "start_date": "2025-02-05",
+                "end_date": "2025-02-07",
+                "statsbar": {
+                  "colors": ["#FF5733", "#33FF57", "#3357FF", "#F3FF33", "#A833FF"]
+                },
+                "icon": [
+                  {
+                    "notes": "MdNotes",
+                    "eye": "IoEyeOutline",
+                    "comment": "IoMdCheckboxOutline"
+                  }
+                ],
+                "comment": "1"
+              },
+              
+              {
+                  "id": "task-00",
+                  "title": "Team Roles and Responsibilities",
+                 
+                  "status": "Completed",
+                  "start_date": "2025-02-06",
+                  "end_date": "2025-02-08",
+                  "icon": "MdNotes"
+              },
+              {
+                  "id": "task-000",
+                  "title": "Technical Stack Decision",
+                  "assignee": "Grace",
+                  "status": "Completed",
+                  "start_date": "2025-02-07",
+                  "end_date": "2025-02-09",
+                  "icon": "MdNotes"
+              },
+              {
+                  "id": "task-0000",
+                  "title": "Project Timeline Planning",
+                 
+                  "status": "",
+                  "start_date": "2025-02-08",
+                  "end_date": "2025-02-10",
+                  "icon": "MdNotes"
+              }
+          ]
+      },
+      {
+          "id": "backlog",
+          "title": "Backlog",
+          "tasks": [
+              {
+                  "id": "task-1",
+                  "title": "Research new UI framework",
+                  "assignee": "Alice",
+                  "status": "",
+                  "start_date": "2025-02-10",
+                  "end_date": "2025-02-15",
+                  "statsbar": {
+                    "colors": ["#FF5733",  "#F3FF33"]
+                  },
+                  "icon": "TbCheckbox",
+                  "box":"5/5"
+              },
+              {
+                  "id": "task-5",
+                  "title": "Set up database schema",
+                  "assignee": "John",
+                  "status": "",
+                  "start_date": "2025-02-12",
+                  "end_date": "2025-02-16",
+                  "icon": [{
+                      "eye": "IoEyeOutline",
+                      "comment": "FaRegComment"
+                  }],
+                  "comment":"2"
+              },
+              {
+                  "id": "task-6",
+                  "title": "Define API endpoints",
+                  
+                  "status": "",
+                  "start_date": "2025-02-14",
+                  "end_date": "2025-02-18",
+                  "icon": {
+                      "eye": "IoEyeOutline",
+                      "comment": "FaRegComment"
+                  }
+                 
+              },
+              {
+                  "id": "task-7",
+                  "title": "Create wireframes for UI",
+                  "assignee": "Michael",
+                  "status": "",
+                  "start_date": "2025-02-15",
+                  "end_date": "2025-02-20",
+                  "icon": [{
+                      "time": "MdAccessTime",
+                      "notes": "MdNotes"
+                  }],
+                  "time":"25 Aug"
+              },
+              {
+                  "id": "task-8",
+                  "title": "Develop authentication system",
+               
+                  "status": "",
+                  "start_date": "2025-02-17",
+                  "end_date": "2025-02-22",
+                  "icon": "TbCheckbox",
+                  "box":"1/4"
+              },
+              {
+                  "id": "task-9",
+                  "title": "Setup CI/CD pipeline",
+                  "assignee": "Liam",
+                  "status": "",
+                  "start_date": "2025-02-19",
+                  "end_date": "2025-02-24",
+                  "icon": "TbCheckbox",
+                  "box":"0/2"
+              },
+              {
+                  "id": "task-10",
+                  "title": "Write unit tests for backend",
+                 
+                  "status": "",
+                  "start_date": "2025-02-21",
+                  "end_date": "2025-02-26",
+                  "icon": "MdNotes"
+              }
+          ]
+      },
+      {
+          "id": "in_progress",
+          "title": "In Progress",
+          "tasks": [
+              {
+                  "id": "task-2",
+                  "title": "Develop authentication module",
+                  "assignee": "Bob",
+                  "status": "Completed",
+                  "start_date": "2025-02-08",
+                  "end_date": "2025-02-12",
+                  "statsbar": {
+                    "colors": [ "#33FF57", "#F3FF33", "#A833FF"]
+                  },
+                  "icon": [{
+                      "eye": "IoEyeOutline",
+                      "notes": "MdNotes",
+                      "attach": "GrFormAttachment",
+                      "checkbox": "TbCheckbox"
+                  }],
+                  "box":"0/4",
+                  "attach":"3"
+              },
+              {
+                  "id": "task-11",
+                  "title": "Design frontend layout",
+                  "assignee": "Chloe",
+                  "status": "",
+                  "start_date": "2025-02-09",
+                  "end_date": "2025-02-14",
+                  "statsbar": {
+                    "colors": [ "#F3FF33", "#A833FF"]
+                  },
+                  "icon": [{
+                      "eye": "IoEyeOutline",
+                      "attach": "GrFormAttachment"
+                  }]
+              },
+              {
+                  "id": "task-12",
+                  "title": "Implement Redux for state management",
+                  "assignee": "David",
+                  "status": "",
+                  "start_date": "2025-02-10",
+                  "end_date": "2025-02-16",
+                  "statsbar": {
+                    "colors": [ "#F3FF33", "#A833FF"]
+                  },
+                  "icon": [{
+                      "eye": "IoEyeOutline",
+                      "attach": "GrFormAttachment"
+                  }]
+              }
+          ]
+      },
+      {
+          "id": "paused",
+          "title": "Paused",
+          "tasks": [
+              {
+                  "id": "task-3",
+                  "title": "Database optimization",
+                  "assignee": "Charlie",
+                  "img":"",
+                  "status": "Paused",
+                  "start_date": "2025-02-05",
+                  "end_date": "2025-02-20",
+                  "statsbar": {
+                    "colors": [  "#A833FF"]
+                  },
+                  "icon": [{
+                      "eye": "IoEyeOutline",
+                      "comment": "FaRegComment"
+                  }],
+                  "comment":"2"
+              }
+          ]
+      },
+      {
+          "id": "ready_for_launch",
+          "title": "Ready for Launch",
+          "tasks": [
+              {
+                  "id": "task-4",
+                  "title": "Custom emoji",
+                  "assignee": {
+                    "names": ["Dave",  "Alice" ]
+                },
+                  "img":"",
+                  "status": " Completed ",
+                  "start_date": "2025-02-01",
+                  "end_date": "2025-02-10",
+                  "statsbar": {
+                    "colors": [ "#3357FF", "#F3FF33", "#A833FF"]
+                  },
+                  "icon": [{
+                      "time": "MdAccessTime",
+                      "notes": "MdNotes"
+                  }],
+                  "time":"18 Aug"
+              },
+              {
+                  "id": "task-13",
+                  "title": "Final testing and bug fixes",
+                  "assignee": {
+                    "names": ["Dave", "Ella",  "Alice" ]
+                },
+                  "img":"",
+                  "status": "  ",
+                  "start_date": "2025-02-02",
+                  "end_date": "2025-02-09",
+                  "statsbar": {
+                    "colors": [  "#F3FF33", "#A833FF"]
+                  },
+                  "icon": "MdNotes"
+              },
+              {
+                  "id": "task-14",
+                  "title": "Prepare user documentation",
+                  "assignee": "George",
+                  "img":"",
+                  "status": "  Completed",
+                  "start_date": "2025-02-03",
+                  "end_date": "2025-02-11",
+                  "statsbar": {
+                    "colors": [ "#3357FF", "#F3FF33"]
+                  },
+                  "icon": [{
+                      "eye": "IoEyeOutline",
+                      "comment": "FaRegComment"
+                  }],
+                  "comment":"1"
+              }
+          ]
+      }
+  ]
+}
