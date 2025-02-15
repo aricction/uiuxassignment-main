@@ -3,10 +3,13 @@ import { TbSortAscending } from "react-icons/tb";
 import { BiCaretDown } from "react-icons/bi";
 import { useState, useRef, useEffect } from "react";
 import useSortStore from "../store/store"; // Zustand store
+import { FaPlus, FaEdit, FaTrash, FaMoon, FaSun } from 'react-icons/fa';
+import Link from "next/link";
 
-const Navbar = ({ tasks, setTasks }) => {
+const Navbar = ({ tasks, setTasks , darkMode, toggleDarkMode }) => {
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef(null);
+  
 
   // Zustand state
   const { ordering, setOrdering, sortedTasks } = useSortStore();
@@ -30,9 +33,11 @@ const Navbar = ({ tasks, setTasks }) => {
 
   const toggleDropdown = () => setIsOpen((prev) => !prev);
 
+ 
+
   return (
     <div>
-      <div className="flex justify-between items-center text-black w-full h-[100px] shadow-md bg-white px-5">
+      <div className={`flex justify-between items-center w-full h-[100px] shadow-md px-5 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
         {/* Dropdown Container */}
         <div className="relative" ref={dropdownRef}>
           <button
@@ -45,11 +50,11 @@ const Navbar = ({ tasks, setTasks }) => {
           </button>
 
           {isOpen && (
-            <div className="absolute bg-gray-600 p-3 rounded-md w-[300px] shadow-lg top-12 z-10">
+            <div className={`absolute  p-3 rounded-md w-[300px] shadow-lg top-12 z-10 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
               <div className="flex flex-col space-y-2">
-                <label className="text-white">Order by</label>
+                <label className="">Order by</label>
                 <select
-                  className="w-full p-2 border border-gray-300 rounded-md"
+                  className={`w-full p-2 border border-gray-300 rounded-md ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}
                   value={ordering}
                   onChange={(e) => setOrdering(e.target.value)}
                 >
@@ -61,12 +66,18 @@ const Navbar = ({ tasks, setTasks }) => {
             </div>
           )}
         </div>
+        <Link href="/timeline">Timeline</Link>
 
         {/* Search Input */}
+        <button onClick={toggleDarkMode}
+         className="p-2 rounded-full focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+         aria-label={darkMode ? 'Switch to light mode' : 'Switch to dark mode'}>
+          {darkMode ? <FaSun className="text-yellow-300"/> : < FaMoon className="text-gray-700"/>}
+        </button>
         <input
           type="text"
           placeholder="Search..."
-          className="lg:w-[300px] p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="lg:w-[300px] text-black p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
     </div>

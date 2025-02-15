@@ -1,17 +1,16 @@
-import Page from "./dashboard/page"
+
 import Card from "./components/card";
 import Navbar from "./components/navbar";
-import Dashboard from "./dashboard/page"
-
-
+import Dashboard from "./dashboard/page";
+import TimeLine from "./timeline/page";
+import Link from "next/link";
 export default function Home() {
   return (
     <div className="">
     
       <main >
-       <Dashboard />
+       <Dashboard  />      
      
-       
       </main>
     </div>
   );

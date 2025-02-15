@@ -13,18 +13,20 @@
                 "img": "",
                 "status": "",
                 "start_date": "2025-02-05",
-                "end_date": "2025-02-07",
+            
                 "statsbar": {
                   "colors": ["#FF5733", "#33FF57", "#3357FF", "#F3FF33", "#A833FF"]
                 },
-                "icon": [
-                  {
-                    "notes": "MdNotes",
-                    "eye": "IoEyeOutline",
-                    "comment": "IoMdCheckboxOutline"
-                  }
-                ],
-                "comment": "1"
+               "icon": [
+                     {
+                        "eye": { "name": "IoEyeOutline", "value": "" },
+                       "notes": { "name": "MdNotes", "value": "" },
+                        "comment": { "name": "FaRegComment", "value": 1 }
+                     }
+                   
+
+                ]
+               
               },
               
               {
@@ -33,7 +35,7 @@
                  
                   "status": "Completed",
                   "start_date": "2025-02-06",
-                  "end_date": "2025-02-08",
+               
                   "icon": "MdNotes"
               },
               {
@@ -42,7 +44,7 @@
                   "assignee": "Grace",
                   "status": "Completed",
                   "start_date": "2025-02-07",
-                  "end_date": "2025-02-09",
+                
                   "icon": "MdNotes"
               },
               {
@@ -51,7 +53,7 @@
                  
                   "status": "",
                   "start_date": "2025-02-08",
-                  "end_date": "2025-02-10",
+              
                   "icon": "MdNotes"
               }
           ]
@@ -66,12 +68,17 @@
                   "assignee": "Alice",
                   "status": "",
                   "start_date": "2025-02-10",
-                  "end_date": "2025-02-15",
+              
                   "statsbar": {
                     "colors": ["#FF5733",  "#F3FF33"]
                   },
-                  "icon": "TbCheckbox",
-                  "box":"5/5"
+                
+                  "icon": [
+                    {
+                       "box": { "name": "TbCheckbox", "value": "5/5" }
+                    }
+                ]
+                 
               },
               {
                   "id": "task-5",
@@ -79,12 +86,17 @@
                   "assignee": "John",
                   "status": "",
                   "start_date": "2025-02-12",
-                  "end_date": "2025-02-16",
-                  "icon": [{
-                      "eye": "IoEyeOutline",
-                      "comment": "FaRegComment"
-                  }],
-                  "comment":"2"
+                
+                  "icon": [
+                    {
+                       "eye": { "name": "IoEyeOutline", "value": "" },
+                     
+                       "comment": { "name": "FaRegComment", "value": 2 }
+                    }
+                  
+
+               ]
+                  
               },
               {
                   "id": "task-6",
@@ -92,11 +104,16 @@
                   
                   "status": "",
                   "start_date": "2025-02-14",
-                  "end_date": "2025-02-18",
-                  "icon": {
-                      "eye": "IoEyeOutline",
-                      "comment": "FaRegComment"
-                  }
+              
+                  "icon": [
+                    {
+                       "eye": { "name": "IoEyeOutline", "value": "" },
+                    
+                       "comment": { "name": "FaRegComment", "value": 2 }
+                    }
+                  
+
+               ]
                  
               },
               {
@@ -105,12 +122,15 @@
                   "assignee": "Michael",
                   "status": "",
                   "start_date": "2025-02-15",
-                  "end_date": "2025-02-20",
-                  "icon": [{
-                      "time": "MdAccessTime",
-                      "notes": "MdNotes"
-                  }],
-                  "time":"25 Aug"
+                
+                
+                  "icon": [
+                    {
+                       "time": { "name": "MdAccessTime", "value": "25 Aug" },
+                      "notes": { "name": "MdNotes", "value": "" }    
+                    }    
+                   ]
+                  
               },
               {
                   "id": "task-8",
@@ -118,9 +138,13 @@
                
                   "status": "",
                   "start_date": "2025-02-17",
-                  "end_date": "2025-02-22",
-                  "icon": "TbCheckbox",
-                  "box":"1/4"
+                         
+                  "icon": [
+                    {
+                       "checkbox": { "name": "TbCheckbox", "value": "1/4" }   
+                    }
+                ]
+                 
               },
               {
                   "id": "task-9",
@@ -128,9 +152,13 @@
                   "assignee": "Liam",
                   "status": "",
                   "start_date": "2025-02-19",
-                  "end_date": "2025-02-24",
-                  "icon": "TbCheckbox",
-                  "box":"0/2"
+                
+                  "icon": [
+                    {
+                       "checkbox": { "name": "TbCheckbox", "value": "0/2" }
+                      
+                    }
+                ]
               },
               {
                   "id": "task-10",
@@ -138,7 +166,7 @@
                  
                   "status": "",
                   "start_date": "2025-02-21",
-                  "end_date": "2025-02-26",
+              
                   "icon": "MdNotes"
               }
           ]
@@ -153,18 +181,21 @@
                   "assignee": "Bob",
                   "status": "Completed",
                   "start_date": "2025-02-08",
-                  "end_date": "2025-02-12",
+                
                   "statsbar": {
                     "colors": [ "#33FF57", "#F3FF33", "#A833FF"]
                   },
-                  "icon": [{
-                      "eye": "IoEyeOutline",
-                      "notes": "MdNotes",
-                      "attach": "GrFormAttachment",
-                      "checkbox": "TbCheckbox"
-                  }],
-                  "box":"0/4",
-                  "attach":"3"
+                 "icon": [
+                     {
+                         "eye": { "name": "IoEyeOutline", "value": "" },
+                       "notes": { "name": "MdNotes", "value": "" },
+                       "attachment": { "name": "GrFormAttachment", "value": 4 },              
+                       "checkbox": { "name": "TbCheckbox", "value": "0/4" }
+                       
+                     }
+                   ]
+
+                
               },
               {
                   "id": "task-11",
@@ -172,14 +203,17 @@
                   "assignee": "Chloe",
                   "status": "",
                   "start_date": "2025-02-09",
-                  "end_date": "2025-02-14",
+                
                   "statsbar": {
                     "colors": [ "#F3FF33", "#A833FF"]
                   },
-                  "icon": [{
-                      "eye": "IoEyeOutline",
-                      "attach": "GrFormAttachment"
-                  }]
+                  "icon": [
+                    {
+                        "eye": { "name": "IoEyeOutline", "value": "" },
+                      "notes": { "name": "MdNotes", "value": "" }
+                 
+                      
+                    }]
               },
               {
                   "id": "task-12",
@@ -187,14 +221,17 @@
                   "assignee": "David",
                   "status": "",
                   "start_date": "2025-02-10",
-                  "end_date": "2025-02-16",
+                  
                   "statsbar": {
                     "colors": [ "#F3FF33", "#A833FF"]
                   },
-                  "icon": [{
-                      "eye": "IoEyeOutline",
-                      "attach": "GrFormAttachment"
-                  }]
+                  "icon": [
+                    {
+                        "eye": { "name": "IoEyeOutline", "value": "" },
+                      "notes": { "name": "MdNotes", "value": "" }
+                 
+                      
+                    }]
               }
           ]
       },
@@ -209,15 +246,16 @@
                   "img":"",
                   "status": "Paused",
                   "start_date": "2025-02-05",
-                  "end_date": "2025-02-20",
+
                   "statsbar": {
                     "colors": [  "#A833FF"]
                   },
-                  "icon": [{
-                      "eye": "IoEyeOutline",
-                      "comment": "FaRegComment"
-                  }],
-                  "comment":"2"
+                  "icon": [
+                    {
+                       "eye": { "name": "IoEyeOutline", "value": "" },           
+                       "comment": { "name": "FaRegComment", "value": 2 }
+                    }
+                ]
               }
           ]
       },
@@ -234,15 +272,19 @@
                   "img":"",
                   "status": " Completed ",
                   "start_date": "2025-02-01",
-                  "end_date": "2025-02-10",
+               
                   "statsbar": {
                     "colors": [ "#3357FF", "#F3FF33", "#A833FF"]
                   },
-                  "icon": [{
-                      "time": "MdAccessTime",
-                      "notes": "MdNotes"
-                  }],
-                  "time":"18 Aug"
+               
+                  "icon": [
+                    {
+                       "time": { "name": "MdAccessTime", "value": "18 Aug" },
+                    
+                       "notes": { "name": "MdNotes", "value": 2 }
+                    }
+                ]
+                 
               },
               {
                   "id": "task-13",
@@ -253,7 +295,7 @@
                   "img":"",
                   "status": "  ",
                   "start_date": "2025-02-02",
-                  "end_date": "2025-02-09",
+                 
                   "statsbar": {
                     "colors": [  "#F3FF33", "#A833FF"]
                   },
@@ -266,15 +308,19 @@
                   "img":"",
                   "status": "  Completed",
                   "start_date": "2025-02-03",
-                  "end_date": "2025-02-11",
+                 
                   "statsbar": {
                     "colors": [ "#3357FF", "#F3FF33"]
                   },
+                 
                   "icon": [{
-                      "eye": "IoEyeOutline",
-                      "comment": "FaRegComment"
-                  }],
-                  "comment":"1"
+                       "eye": { "name": "IoEyeOutline", "value": "" },
+                    
+                       "comment": { "name": "FaRegComment", "value": 1 }
+                    }]
+                 
+                  
+                 
               }
           ]
       }
