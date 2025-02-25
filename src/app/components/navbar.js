@@ -3,7 +3,7 @@ import { TbSortAscending } from "react-icons/tb";
 import { BiCaretDown } from "react-icons/bi";
 import { useState, useRef, useEffect } from "react";
 import useSortStore from "../store/store"; // Zustand store
-import { FaPlus, FaEdit, FaTrash, FaMoon, FaSun } from "react-icons/fa";
+import { FaMoon, FaSun } from "react-icons/fa";
 import Link from "next/link";
 
 const Navbar = ({ setTasks, darkMode, toggleDarkMode, searchQuery, setSearchQuery }) => {
@@ -33,6 +33,7 @@ const Navbar = ({ setTasks, darkMode, toggleDarkMode, searchQuery, setSearchQuer
 
   return (
     <div>
+      {/* Navbar */}
       <div
         className={`flex justify-between items-center w-full h-[80px] shadow-md px-5 ${
           darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-900"
@@ -86,13 +87,24 @@ const Navbar = ({ setTasks, darkMode, toggleDarkMode, searchQuery, setSearchQuer
           {darkMode ? <FaSun className="text-yellow-300" /> : <FaMoon className="text-gray-700" />}
         </button>
 
-        {/* Search Input */}
+        {/* Search Input (Only Visible on Large Screens) */}
         <input
           type="text"
           placeholder="Search..."
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value)}
-          className="lg:w-[300px] text-black p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className="hidden lg:block lg:w-[300px] text-black p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+        />
+      </div>
+
+      {/* Search Bar (Visible Only on Small Screens) */}
+      <div className="block lg:hidden w-full px-4 mt-4">
+        <input
+          type="text"
+          placeholder="Search..."
+          value={searchQuery}
+          onChange={(e) => setSearchQuery(e.target.value)}
+          className="w-[90%] mx-auto block text-black p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
     </div>
