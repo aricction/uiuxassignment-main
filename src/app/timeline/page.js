@@ -120,7 +120,7 @@ const Timeline = () => {
                     return (
                       <div
                         key={`${user.id}-${taskIndex}`}
-                        className="absolute p-2 rounded text-center shadow-md text-white text-xs sm:text-sm"
+                        className="absolute p-2 m-1 rounded text-center shadow-md text-white text-xs sm:text-sm"
                         style={{
                           backgroundColor: task.color,
                           left: `${taskLeftOffset}px`,

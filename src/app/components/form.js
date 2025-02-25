@@ -52,7 +52,7 @@ const TodoForm = ({ darkMode, id, handleInput, handleChange, title, assignee , s
 
   return (
     <div className="flex absolute justify-center text-black items-center shadow-md overflow-hidden z-10">
-      <div className={`w-[250px] ml-8 p-6 shadow-2xl border rounded-lg shadow-md ${darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"}`}>
+      <div className={`w-[350px] ml-8 p-6 shadow-2xl border rounded-lg shadow-md ${darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"}`}>
         <form className="space-y-4" onSubmit={(e) => handleInput(e, formData)}>
           {/* Title Input */}
           <div>

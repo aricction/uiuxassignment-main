@@ -20,7 +20,7 @@ const Card = ({ darkMode, onEdit, id, title, img, date, status, assignee, icons,
             <div key={index} className="h-full w-[40px] rounded-lg" style={{ backgroundColor: col }}></div>
           ))}
 
-          <button onClick={onEdit} className="absolute lg:ml-[220px] ml-[340px] flex justify-center items-center">          
+          <button onClick={onEdit} className="absolute lg:ml-[220px] ml-[420px] flex justify-center items-end">          
             <MdEdit size={12} />
           </button>
         </div>
@@ -43,7 +43,7 @@ const Card = ({ darkMode, onEdit, id, title, img, date, status, assignee, icons,
           </div>
 
           {/* Assignee Avatars with Initials */}
-          <div className="mt-3 absolute lg:ml-[205px] ml-[310px] sm:ml-[300px] avatar h-[25px] w-[25px] rounded-full flex justify-center items-center text-black font-bold text-sm">          
+          <div className="mt-3 absolute lg:ml-[205px] ml-[400px] sm:ml-[300px] avatar h-[25px] w-[25px] rounded-full flex justify-center items-center text-black font-bold text-sm">          
             {assignee.length > 0 &&
             assignee.map((name, index) => (
               <div 
