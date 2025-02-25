@@ -1,0 +1,94 @@
+{
+  "Timeline_Data": [
+    {
+      "id": 1,
+      "name": "Alice Johnson",
+      "tasks": [
+        {
+          "title": "Design Homepage",
+          "startDate": "2025-02-27",
+          "endDate": "2025-03-03",
+          "color": "#60A5FA" 
+        },
+        {
+          "title": "Create UI Components",
+          "startDate": "2025-03-04",
+          "endDate": "2025-03-08",
+          "color": "#34D399"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Bob Smith",
+      "tasks": [
+        {
+          "title": "Implement Authentication",
+          "startDate": "2025-02-25",
+          "endDate": "2025-02-28",
+          "color": "#F87171"
+        },
+        {
+          "title": "Security Enhancements",
+          "startDate": "2025-03-01",
+          "endDate": "2025-03-05",
+          "color": "#FACC15"
+        }
+      ]
+    },
+    {
+      "id": 3,
+      "name": "Charlie Brown",
+      "tasks": [
+        {
+          "title": "Database Optimization",
+          "startDate": "2025-02-26",
+          "endDate": "2025-03-03",
+          "color": "#C084FC"
+        },
+        {
+          "title": "Database Backup Setup",
+          "startDate": "2025-03-04",
+          "endDate": "2025-03-06",
+          "color": "#F472B6"
+        }
+      ]
+    },
+    {
+      "id": 4,
+      "name": "David Lee",
+      "tasks": [
+        {
+          "title": "Frontend Integration",
+          "startDate": "2025-02-28",
+          "endDate": "2025-03-06",
+          "color": "#818CF8"
+        },
+        {
+          "title": "Performance Optimization",
+          "startDate": "2025-03-07",
+          "endDate": "2025-03-10",
+          "color": "#2DD4BF"
+        }
+      ]
+    },
+    {
+      "id": 5,
+      "name": "Eve Adams",
+      "tasks": [
+        {
+          "title": "Testing & Debugging",
+          "startDate": "2025-03-03",
+          "endDate": "2025-03-07",
+          "color": "#FB923C"
+        },
+        {
+          "title": "Bug Fixing Sprint",
+          "startDate": "2025-03-07",
+          "endDate": "2025-03-10",
+          "color": "#9CA3AF"
+        }
+      ]
+    }
+  ]
+}
