@@ -15,7 +15,7 @@ const TodoForm = ({ darkMode, handleInput, handleChange, title, assignee, status
     status: status || "general information",
    
     end_date: end_date || "",
-    color: colors[0],
+    color: [],
   });
 
   // Convert default names into selectable options
@@ -121,20 +121,43 @@ const TodoForm = ({ darkMode, handleInput, handleChange, title, assignee, status
             />
           </div>
 
+         
           {/* Color Selection */}
-          <div>
-            <label className="block text-sm font-medium">Select Color</label>
-            <div className="flex gap-2 mt-2">
-              {colors.map((color) => (
-                <div
-                  key={color}
-                  className={`w-6 h-6 rounded-full border-2 cursor-pointer ${formData.color === color ? "border-black" : "border-gray-300"}`}
-                  style={{ backgroundColor: color }}
-                  onClick={() => setFormData((prev) => ({ ...prev, color }))}
-                ></div>
-              ))}
-            </div>
-          </div>
+<div>
+  <label className="block text-sm font-medium">Select Tags</label>
+  <div className="flex gap-2 mt-2">
+    {colors.map((color) => (
+      <label key={color} className="flex items-center cursor-pointer">
+        <input
+          type="checkbox"
+          name="color"
+          value={color}
+          checked={formData.color.includes(color)}
+          onChange={(e) => {
+            const selectedColor = e.target.value;
+            setFormData((prev) => ({
+              ...prev,
+              color: prev.color.includes(selectedColor)
+                ? prev.color.filter((c) => c !== selectedColor) // Remove if selected
+                : [...prev.color, selectedColor], // Add if not selected
+            }));
+          }}
+          className="hidden"
+        />
+        <div
+          className={`w-6 h-6 rounded-md border-2 transition-all ${
+            formData.color.includes(color) ? "border-black" : "border-gray-300"
+          }`}
+          style={{
+            backgroundColor: color,
+            filter: formData.color.includes(color) ? "brightness(1.2)" : "brightness(0.7)",
+          }}
+        ></div>
+      </label>
+    ))}
+  </div>
+</div>
+
 
           {/* Submit Button */}
           <button
