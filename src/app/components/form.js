@@ -54,6 +54,7 @@ const TodoForm = ({ darkMode, handleInput, handleChange, title, assignee, status
               value={formData.title}
               onChange={onChange}
               className="w-full text-black p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+              required
             />
           </div>
 
@@ -62,6 +63,7 @@ const TodoForm = ({ darkMode, handleInput, handleChange, title, assignee, status
             <label className="block text-sm font-medium">Assignee</label>
             <CreatableSelect
               isMulti
+              required
               name="assignee"
               options={defaultOptions} // Set default names
               value={selectedOptions}
@@ -99,6 +101,7 @@ const TodoForm = ({ darkMode, handleInput, handleChange, title, assignee, status
             <input
               type="date"
               name="startDate"
+              required
               value={formData.startDate}
               onChange={onChange}
               className="w-full text-[12px] text-black p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -111,6 +114,7 @@ const TodoForm = ({ darkMode, handleInput, handleChange, title, assignee, status
             <input
               type="date"
               name="end_date"
+              required
               value={formData.end_date}
               onChange={onChange}
               className="w-full text-[12px] text-black p-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
