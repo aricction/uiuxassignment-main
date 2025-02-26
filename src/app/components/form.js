@@ -8,16 +8,12 @@ const defaultNames = [
 
 const colors = ["#FF5733", "#33FF57", "#3357FF", "#F3FF33", "#A833FF"];
 
-const TodoForm = ({ darkMode, handleInput, handleChange, title, assignee, status, end_date, isEditing }) => {
+const TodoForm = ({ darkMode, handleInput, handleChange, title, assignee, status, end_date, isEditing, color }) => {
   const [formData, setFormData] = useState({
     title: title || "",
-    assignee: Array.isArray(assignee?.names)
-    ? assignee.names
-    : typeof assignee === "string"
-    ? [assignee]
-    : [],
+    assignee: Array.isArray(assignee) ? assignee : [],
     status: status || "general information",
-    startDate: "",
+   
     end_date: end_date || "",
     color: colors[0],
   });
@@ -34,7 +30,7 @@ const TodoForm = ({ darkMode, handleInput, handleChange, title, assignee, status
       setSelectedOptions(assignee.map((name) => ({ value: name, label: name })));
       setFormData((prev) => ({ ...prev, assignee }));
     }
-  }, [formData.assignee]);
+  }, [assignee]);
 
   const onChange = (e) => {
     const { name, value } = e.target;

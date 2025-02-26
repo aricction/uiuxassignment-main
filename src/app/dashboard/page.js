@@ -160,6 +160,7 @@ export default function Dashboard() {
       title: task.title,
       assignee: formattedAssignee,
       end_date: task.end_date || "",
+      
     });
     setOpenColumn(columnId);
   };
@@ -276,6 +277,7 @@ export default function Dashboard() {
                       title={input.title}
                       assignee={Array.isArray(input?.assignee) ? input.assignee : []}
                       end_date={input.end_date}
+                      color = {input.color}
                       handleChange={handleChange}
                       handleInput={(e) => handleInput(e, column.id)}
                       isEditing={editingTask !== null}

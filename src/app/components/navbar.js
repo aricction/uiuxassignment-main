@@ -97,6 +97,7 @@ const Navbar = ({ setTasks, darkMode, toggleDarkMode, searchQuery, setSearchQuer
                   value={ordering}
                   onChange={(e) => setOrdering(e.target.value)}
                 >
+                    <option value="All">All</option>
                   <option value="Completed">Completed</option>
                   <option value="Paused">Paused</option>
                   <option value="Pending">Pending</option>
