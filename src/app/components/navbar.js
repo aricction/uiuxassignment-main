@@ -6,8 +6,25 @@ import useSortStore from "../store/store"; // Zustand store
 import { FaMoon, FaSun } from "react-icons/fa";
 import Link from "next/link";
 
+const useDebounce = (value, delay) => {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    const handler = setTimeout(() => {
+      setDebouncedValue(value);
+    }, delay);
+
+    return () => {
+      clearTimeout(handler);
+    };
+  }, [value, delay]); // Added `delay` dependency
+
+  return debouncedValue;
+};
+
 const Navbar = ({ setTasks, darkMode, toggleDarkMode, searchQuery, setSearchQuery }) => {
   const [isOpen, setIsOpen] = useState(false);
+  const [searchInput, setSearchInput] = useState(searchQuery || ""); 
   const dropdownRef = useRef(null);
 
   // Zustand state
@@ -27,13 +44,28 @@ const Navbar = ({ setTasks, darkMode, toggleDarkMode, searchQuery, setSearchQuer
   // Update tasks order when sorting preference changes
   useEffect(() => {
     if (setTasks) {
-      setTasks((prevTasks) => sortedTasks(prevTasks, ordering));
+      setTasks((prevTasks) => {
+        return sortedTasks(prevTasks, ordering);
+      });
     }
-  }, [ordering, setTasks]);
+  }, [ordering, setTasks, sortedTasks]);
+
+
+  const debouncedSearchQuery = useDebounce(searchInput, 400);
+
+  useEffect(() => {
+    if (setSearchQuery) {
+      setSearchQuery(debouncedSearchQuery);
+    }
+  }, [debouncedSearchQuery, setSearchQuery]); 
+ 
+  const handleSearch = (e) => {
+    setSearchInput(e.target.value);
+  };
 
   return (
     <div>
-      {/* Navbar */}
+   
       <div
         className={`flex justify-between items-center w-full h-[80px] shadow-md px-5 ${
           darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-900"
@@ -90,9 +122,10 @@ const Navbar = ({ setTasks, darkMode, toggleDarkMode, searchQuery, setSearchQuer
         {/* Search Input (Only Visible on Large Screens) */}
         <input
           type="text"
+          id="search"
           placeholder="Search..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
+          value={searchInput} // Fixed: Use `searchInput`, not `searchQuery`
+          onChange={handleSearch}
           className="hidden lg:block lg:w-[300px] text-black p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>
@@ -102,8 +135,8 @@ const Navbar = ({ setTasks, darkMode, toggleDarkMode, searchQuery, setSearchQuer
         <input
           type="text"
           placeholder="Search..."
-          value={searchQuery}
-          onChange={(e) => setSearchQuery(e.target.value)}
+          value={searchInput}
+          onChange={handleSearch}
           className="w-[90%] mx-auto block text-black p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
         />
       </div>

@@ -1,59 +1,50 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import CreatableSelect from "react-select/creatable";
 
-const TodoForm = ({ darkMode, id, handleInput, handleChange, title, assignee , status, end_date, isEditing }) => {
-  console.log("TodoForm Props:", { title, assignee, end_date });
+const defaultNames = [
+  "Eve", "Grace", "Alice", "John", "Michael", "Liam", "Bob", 
+  "Chloe", "David", "Charlie", "Dave", "Ella", "George"
+];
+
+const colors = ["#FF5733", "#33FF57", "#3357FF", "#F3FF33", "#A833FF"];
+
+const TodoForm = ({ darkMode, handleInput, handleChange, title, assignee, status, end_date, isEditing }) => {
   const [formData, setFormData] = useState({
     title: title || "",
-    assignee: Array.isArray(assignee?.names) ? assignee.names: typeof assignee ==="string" ? [assignee]: [],
+    assignee: Array.isArray(assignee) ? assignee : [],
     status: status || "general information",
     startDate: "",
     end_date: end_date || "",
+    color: colors[0],
   });
+
+  // Convert default names into selectable options
+  const defaultOptions = defaultNames.map((name) => ({ value: name, label: name }));
 
   const [selectedOptions, setSelectedOptions] = useState(
     Array.isArray(assignee) ? assignee.map((name) => ({ value: name, label: name })) : []
   );
-  
-
-  const [error, setError] = useState("");
-  const [loading, setLoading] = useState(false);
-  const [isOpen, setIsOpen] = useState(false);
-  const dropdownRef = useRef(null);
 
   useEffect(() => {
-    console.log("Received assignee in TodoForm:", assignee);
-  
     if (Array.isArray(assignee)) {
       setSelectedOptions(assignee.map((name) => ({ value: name, label: name })));
       setFormData((prev) => ({ ...prev, assignee }));
     }
   }, [assignee]);
-  
-  
 
-  // Handle form input changes
   const onChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({ ...prev, [name]: value }));
     handleChange(e);
   };
 
-  useEffect(() => {
-    const handleClickOutside = (e) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(e.target)) {
-        setIsOpen(false);
-      }
-    };
-
-    document.addEventListener("mousedown", handleClickOutside);
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, []);
-
   return (
     <div className="flex absolute justify-center text-black items-center shadow-md overflow-hidden z-10">
-      <div className={`w-[350px] ml-8 p-6 shadow-2xl border rounded-lg shadow-md ${darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"}`}>
+      <div className={`w-[350px] ml-8 p-6 shadow-2xl border rounded-lg ${darkMode ? "bg-gray-900 text-white" : "bg-white text-gray-900"}`}>
+
         <form className="space-y-4" onSubmit={(e) => handleInput(e, formData)}>
+          <h1>{isEditing ? "" : "Add a task"}</h1>
+          
           {/* Title Input */}
           <div>
             <label className="block text-sm font-medium">Title</label>
@@ -72,6 +63,7 @@ const TodoForm = ({ darkMode, id, handleInput, handleChange, title, assignee , s
             <CreatableSelect
               isMulti
               name="assignee"
+              options={defaultOptions} // Set default names
               value={selectedOptions}
               onChange={(selected) => {
                 setSelectedOptions(selected);
@@ -125,15 +117,27 @@ const TodoForm = ({ darkMode, id, handleInput, handleChange, title, assignee , s
             />
           </div>
 
-          {error && <p className="text-red-500 text-sm">{error}</p>}
+          {/* Color Selection */}
+          <div>
+            <label className="block text-sm font-medium">Select Color</label>
+            <div className="flex gap-2 mt-2">
+              {colors.map((color) => (
+                <div
+                  key={color}
+                  className={`w-6 h-6 rounded-full border-2 cursor-pointer ${formData.color === color ? "border-black" : "border-gray-300"}`}
+                  style={{ backgroundColor: color }}
+                  onClick={() => setFormData((prev) => ({ ...prev, color }))}
+                ></div>
+              ))}
+            </div>
+          </div>
 
           {/* Submit Button */}
           <button
             type="submit"
             className="w-full p-3 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring-2 focus:ring-blue-500"
-            disabled={loading}
           >
-            {loading ? "Adding ..." : isEditing ? "Save" : "Add"}
+            {isEditing ? "Save" : "Add"}
           </button>
         </form>
       </div>
