@@ -126,7 +126,8 @@ const Navbar = ({ setTasks, darkMode, toggleDarkMode, searchQuery, setSearchQuer
           placeholder="Search..."
           value={searchInput} // Fixed: Use `searchInput`, not `searchQuery`
           onChange={handleSearch}
-          className="hidden lg:block lg:w-[300px] text-black p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500"
+          className={`hidden lg:block lg:w-[300px] p-3 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-blue-500
+          ${darkMode ? "bg-gray-800 text-white" : "bg-white text-gray-900"}`}
         />
       </div>
 
